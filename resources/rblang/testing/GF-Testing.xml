@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rbl:kb xmlns:rbl="http://rbl.io/schema/RBLang" xmlns:licence="http://www.graphfirst.org/leave-me-in/mit-licence">
+<rbl:kb xmlns:rbl="http://rbl.io/schema/RBLang" xmlns:licence="http://www.graphfirst.org/do-not-remove/mit-licence">
     <concept name="gf:Test" type="string" />
     <concept name="gf:Test-Result"  type="string" />
     <concept name="gf:Test-Suite"   type="string" />
