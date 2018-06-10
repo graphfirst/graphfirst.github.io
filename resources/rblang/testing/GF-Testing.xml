@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rbl:kb xmlns:rbl="http://rbl.io/schema/RBLang" xmlns:licence="http://www.graphfirst.org/do-not-remove/mit-licence">
-    <concept name="gf:Test" type="string" />
+    <concept name="gf:Test"         type="string" />
     <concept name="gf:Test-Result"  type="string" />
     <concept name="gf:Test-Suite"   type="string" />
     <concept name="gf:Test-Outcome" type="string" />
@@ -11,19 +11,19 @@
 
     <concinst name="Pass"       type="gf:Test-Result" />
     <concinst name="Fail"       type="gf:Test-Result" />
-    <concinst name="test-suite" type="gf:Test-Suite" />
+    <concinst name="test-suite" type="gf:Test-Suite"  />
 
-    <relinst type="gf-test-outcome" cf="100" >
-        <condition rel="gf-contains-test" subject="test-suite" object="%TEST" weight="0" behaviour="optional" />
-        <condition rel="gf-test-result" subject="%TEST" object="Fail" />
+    <relinst type="gf-test-outcome" >
+        <condition subject="test-suite" rel="gf-contains-test" object="%TEST" weight="0" behaviour="optional" />
+        <condition subject="%TEST" rel="gf-test-result" object="Fail" />
         <condition expression="'❌' + %TEST + ': Fail'" value="%O" />
     </relinst>
-    <relinst type="gf-test-outcome" cf="100" >
-        <condition rel="gf-contains-test" subject="test-suite" object="%TEST" weight="0" behaviour="optional" />
-        <condition rel="gf-test-result" subject="%TEST" object="Pass" />
+    <relinst type="gf-test-outcome" >
+        <condition subject="test-suite" rel="gf-contains-test" object="%TEST" weight="0" behaviour="optional" />
+        <condition subject="%TEST" rel="gf-test-result" object="Pass" />
         <condition expression="'✅' + %TEST + ': Pass'" value="%O" />
     </relinst>
-    <relinst type="gf-test-result" object="Fail" cf="100" >
-        <condition expression="countRelationshipInstances(%S, gf-test-result, Pass)" />
+    <relinst type="gf-test-result" object="Fail" >
+        <condition expression="countRelationshipInstances(%S, gf-test-result, Pass) = 0" />
     </relinst>
 </rbl:kb>
