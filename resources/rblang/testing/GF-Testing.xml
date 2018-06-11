@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rbl:kb xmlns:rbl="http://rbl.io/schema/RBLang" xmlns:licence="http://www.graphfirst.org/do-not-remove/mit-licence">
     <concept name="gf:Test"         type="string" />
-    <concept name="gf:Test-Result"  type="string" />
+    <concept name="gf:Test-Result"  type="truth"  />
     <concept name="gf:Test-Suite"   type="string" />
     <concept name="gf:Test-Outcome" type="string" />
 
@@ -9,21 +9,20 @@
     <rel name="gf-contains-test" subject="gf:Test-Suite" object="gf:Test"         plural="true"  askable="none" />
     <rel name="gf-test-outcome"  subject="gf:Test-Suite" object="gf:Test-Outcome" plural="true"  askable="none" />
 
-    <concinst name="Pass"       type="gf:Test-Result" />
-    <concinst name="Fail"       type="gf:Test-Result" />
     <concinst name="test-suite" type="gf:Test-Suite"  />
 
     <relinst type="gf-test-outcome" >
         <condition subject="test-suite" rel="gf-contains-test" object="%TEST" weight="0" behaviour="optional" />
-        <condition subject="%TEST" rel="gf-test-result" object="Fail" />
+        <condition subject="%TEST" rel="gf-test-result" object="false" />
         <condition expression="'❌' + %TEST + ': Fail'" value="%O" />
     </relinst>
     <relinst type="gf-test-outcome" >
         <condition subject="test-suite" rel="gf-contains-test" object="%TEST" weight="0" behaviour="optional" />
-        <condition subject="%TEST" rel="gf-test-result" object="Pass" />
+        <condition subject="%TEST" rel="gf-test-result" object="true" />
         <condition expression="'✅' + %TEST + ': Pass'" value="%O" />
     </relinst>
-    <relinst type="gf-test-result" object="Fail" >
-        <condition expression="countRelationshipInstances(%S, gf-test-result, Pass) = 0" />
+
+    <relinst type="gf-test-result" object="false" >
+        <condition expression="countRelationshipInstances(%S, gf-test-result, true) = 0" />
     </relinst>
 </rbl:kb>
