@@ -1,7 +1,30 @@
 ---
 ---
-
 @import 'jekyll-theme-architect';
+
+@import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight');
+
 header {
-  background: #2e7bcf url(../images/header-bg-lights.jpg) 0 0 repeat-x;
+  font-family: 'Love Ya Like A Sister', 'Helvetica Neue', Helvetica, Arial, serif;
+}
+
+header h1 {
+  text-shadow: 0 0 7px black
+}
+
+header h2 {
+  text-shadow: 0 0 4px black;
+  color: #eee
+}
+
+#main-content h1, #main-content h2, #main-content h3, #main-content h4, #main-content h5, #main-content h6  {
+  font-family: 'Zilla Slab Highlight', 'Helvetica Neue', Helvetica, Arial, serif;
+  color: rgba(0,0,0,0.8)
+}
+
+#main-content h1:before, #main-content h2:before, #main-content h3:before, #main-content h4:before, #main-content h5:before, #main-content h6:before {
+  padding-right: 0;
+  margin-left: 0;
+  content: " "
 }
