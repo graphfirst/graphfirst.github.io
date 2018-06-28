@@ -8,7 +8,7 @@ Error: Invalid CSS after "...heme-architect'": expected "{", was ";"
 4: 
 5: @import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');
 6: @import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight');
-7: 
+7:  
 8: header {
 
 Backtrace:
@@ -41,4 +41,4 @@ style.scss:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...heme-architect'\": expected \"{\", was \";\"\A         on line 3 of style.scss\A \A 1: ---\A 2: ---\A 3: @import 'jekyll-theme-architect';\A 4: \A 5: @import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');\A 6: @import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight');\A 7: \A 8: header {"; }
+  content: "Error: Invalid CSS after \"...heme-architect'\": expected \"{\", was \";\"\A         on line 3 of style.scss\A \A 1: ---\A 2: ---\A 3: @import 'jekyll-theme-architect';\A 4: \A 5: @import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');\A 6: @import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight');\A 7:  \A 8: header {"; }
